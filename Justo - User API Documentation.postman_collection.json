@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "f86277c9-f53a-4f8e-8171-c28a5ccef6ab",
+		"name": "Justo - User API Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29154350"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"user@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"user@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get one time auth link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"user@example.com\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/auth/one-time-link"
+			},
+			"response": []
+		},
+		{
+			"name": "verify one time auth link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{ONE_TIME_LINK}}"
+			},
+			"response": []
+		},
+		{
+			"name": "get current time",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{TOKEN}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{BASE_URL}}/auth/time"
+			},
+			"response": []
+		},
+		{
+			"name": "admin kickout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
